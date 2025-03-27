@@ -1,4 +1,4 @@
-import useHousingData from "../components/hook/HousingHook.ts.js";
+import useHousingData from "../components/hook/HousingHook.js";
 import HousingCard from "../components/cards/housing-card/HousingCard.jsx";
 import "./HomePage.scss";
 import PageTitleCard from "../components/cards/page-title-card/PageTitleCard.jsx";
