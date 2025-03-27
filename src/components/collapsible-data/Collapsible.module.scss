@@ -1,0 +1,31 @@
+@use '/src/assets/style/variables';
+
+.collapsible {
+  background-color: var(--bg-fifth);
+  border-radius: 5px;
+
+  > button {
+    display: flex;
+    align-items: center;
+    background: var(--bg-tertiary);
+    color: var(--font-secondary);
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    width: 100%;
+    text-align: start;
+
+    > svg {
+      margin-left: auto;
+    }
+  }
+
+  > section {
+    padding: 20px;
+  }
+}
