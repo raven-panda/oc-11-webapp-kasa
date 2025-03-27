@@ -3,6 +3,7 @@ import ErrorPage from "./pages/_error/ErrorPage.jsx";
 import MainLayout from "./components/layout/MainLayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AboutPage from "./pages/about/AboutPage.jsx";
+import HousingPage from "./pages/housing/HousingPage.jsx";
 
 /**
  * Custom router of the app
@@ -16,12 +17,7 @@ export default function KasaRouter() {
           {RoutesNode}
           <Route
             path="*"
-            element={
-              <ErrorPage
-                status={404}
-                message={"Oups! La page que vous demandez n'existe pas."}
-              />
-            }
+            element={<ErrorPage status={404} />}
           />
         </Routes>
       </MainLayout>
@@ -39,5 +35,6 @@ const RoutesNode = (
   <>
     <Route path={"/"} element={<HomePage />} />
     <Route path={"/about"} element={<AboutPage />} />
+    <Route path={"/housing/:id"} element={<HousingPage />} />
   </>
 );
