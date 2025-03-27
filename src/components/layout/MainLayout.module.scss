@@ -1,11 +1,7 @@
 @use "/src/assets/style/variables";
 
-.layout_main_container, .layout_footer {
-  display: flex;
-  flex-direction: column;
-
-  box-sizing: border-box;
-  padding: 45px 100px;
+.layout_main_container {
+  flex: 1;
 }
 
 .layout_footer {
@@ -15,6 +11,14 @@
   align-items: center;
 }
 
+.layout_main_container, .layout_footer {
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  padding: 45px 100px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -22,6 +26,14 @@
   > nav {
     display: flex;
     gap: 57px;
+
+    > a {
+      text-decoration: none;
+
+      &.current_location {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
