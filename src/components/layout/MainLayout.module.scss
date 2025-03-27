@@ -1,4 +1,44 @@
+@use "/src/assets/style/variables";
+
+.layout_main_container, .layout_footer {
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  padding: 45px 100px;
+}
+
+.layout_logo {
+  color: var(--font-tertiary);
+}
+
+.layout_footer {
+  background-color: var(--bg-secondary);
+  color: var(--font-secondary);
+
+  align-items: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
+
+  > nav {
+    display: flex;
+    gap: 57px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .layout_main_container {
+    padding: 20px;
+  }
+
+  .layout_footer {
+    padding: 66px 0;
+  }
+
+  .layout_logo > svg {
+    width: 146px;
+  }
 }
