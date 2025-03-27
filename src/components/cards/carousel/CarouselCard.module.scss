@@ -1,0 +1,43 @@
+@use '/src/assets/style/variables';
+
+.carousel_section {
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  height: 415px;
+  border-radius: 25px;
+  overflow: hidden;
+
+  > img {
+    flex: 1 0 100%;
+  }
+}
+
+button.nav_previous_picture, button.nav_next_picture {
+  background: transparent;
+  color: var(--font-secondary);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+button.nav_previous_picture {
+  left: 25px;
+}
+
+button.nav_next_picture {
+  right: 25px;
+}
+
+p.nav_index {
+  color: var(--font-secondary);
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+}
