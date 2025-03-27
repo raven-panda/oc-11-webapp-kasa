@@ -1,6 +1,5 @@
 .page_title_card {
   position: relative;
-  background: url('/public/pictures/image-source-bg.png') center;
   padding: 78px 0;
   display: flex;
   justify-content: center;
@@ -26,4 +25,14 @@
     top: 0;
     width: 100%;
   }
+}
+
+.home {
+  background: url('/public/pictures/image-source-bg.png') center;
+}
+
+.about {
+  box-sizing: border-box;
+  min-height: 223px;
+  background: url('/public/pictures/image-source-2-bg.png') center;
 }
