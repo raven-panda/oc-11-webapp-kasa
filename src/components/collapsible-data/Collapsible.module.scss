@@ -1,16 +1,26 @@
 @use '/src/assets/style/variables';
 
 .collapsible {
+  position: relative;
   background-color: var(--bg-fifth);
   border-radius: 5px;
+  width: 100%;
+  overflow: hidden;
+  max-height: 52px;
+  transition: max-height 0.3s;
 
   > button {
+    z-index: 20;
+    left: 0;
+    top: 0;
+    position: absolute;
     display: flex;
     align-items: center;
     background: var(--bg-tertiary);
     color: var(--font-secondary);
     padding: 10px 15px;
     border-radius: 5px;
+    box-sizing: border-box;
 
     cursor: pointer;
 
@@ -26,6 +36,16 @@
   }
 
   > section {
+    margin-top: 52px;
     padding: 20px;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  }
+
+  &.open {
+    max-height: 200px;
+    > section {
+      transform: translateY(0);
+    }
   }
 }
