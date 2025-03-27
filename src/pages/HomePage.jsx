@@ -1,5 +1,5 @@
 import useHousingData from "../components/hook/HousingHook.ts.js";
-import HousingCard from "../components/cards/HousingCard.jsx";
+import HousingCard from "../components/cards/housing-card/HousingCard.jsx";
 import "./HomePage.scss";
 
 export default function HomePage() {
