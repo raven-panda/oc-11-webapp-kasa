@@ -2,6 +2,10 @@
 
 .layout_main_container {
   flex: 1;
+
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .layout_footer {
@@ -22,6 +26,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 50px;
 
   > nav {
     display: flex;
