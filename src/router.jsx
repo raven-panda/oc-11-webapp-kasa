@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorPage from "./pages/error/ErrorPage.jsx";
-import MainLayout from "./components/header/MainLayout.jsx";
+import MainLayout from "./components/layout/MainLayout.jsx";
 
 export default function KasaRouter() {
   return (
