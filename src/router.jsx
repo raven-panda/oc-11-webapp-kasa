@@ -34,6 +34,8 @@ export default function KasaRouter() {
  * To create one, add a `<Route>` child with a path and a page component
  * @type {JSX.Element}
  */
-const RoutesNode = <>
-  <Route path={"/"} element={<HomePage />} />
-</>;
+const RoutesNode = (
+  <>
+    <Route path={"/"} element={<HomePage />} />
+  </>
+);
