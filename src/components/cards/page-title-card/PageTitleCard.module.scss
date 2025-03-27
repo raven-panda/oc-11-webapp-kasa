@@ -1,0 +1,29 @@
+.page_title_card {
+  position: relative;
+  background: url('/public/pictures/image-source-bg.png') center;
+  padding: 78px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 43px;
+
+  color: var(--font-secondary);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+
+  > h1 {
+    z-index: 2;
+    text-shadow: 0 0 2px var(--font-main);
+    font-size: 3rem;
+  }
+
+  &::before {
+    background-color: rgba(0, 0, 0, 0.50);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
