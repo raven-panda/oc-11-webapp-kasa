@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorPage from "./pages/_error/ErrorPage.jsx";
 import MainLayout from "./components/layout/MainLayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import AboutPage from "./pages/about/AboutPage.jsx";
 
 /**
  * Custom router of the app
@@ -37,5 +38,6 @@ export default function KasaRouter() {
 const RoutesNode = (
   <>
     <Route path={"/"} element={<HomePage />} />
+    <Route path={"/about"} element={<AboutPage />} />
   </>
 );
