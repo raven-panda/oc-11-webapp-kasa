@@ -8,10 +8,6 @@
   padding: 45px 100px;
 }
 
-.layout_logo {
-  color: var(--font-tertiary);
-}
-
 .layout_footer {
   background-color: var(--bg-secondary);
   color: var(--font-secondary);
@@ -36,9 +32,5 @@
 
   .layout_footer {
     padding: 66px 0;
-  }
-
-  .layout_logo > svg {
-    width: 146px;
   }
 }

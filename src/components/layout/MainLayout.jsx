@@ -7,22 +7,22 @@ import KasaLogo from "../../assets/icon/KasaLogo.jsx";
  * @returns {JSX.Element}
  */
 export default function MainLayout({ children }) {
-  return <section>
-    <div className={styles.layout_main_container}>
+  return <>
+    <main className={styles.layout_main_container}>
       <header className={styles.header}>
-        <KasaLogo className={styles.layout_logo} />
+        <KasaLogo />
         <nav>
           <Link to={"/"}>Accueil</Link>
           <Link to={"/about"}>A Propos</Link>
         </nav>
       </header>
-      <main>
+      <section>
         {children}
-      </main>
-    </div>
+      </section>
+    </main>
     <footer className={styles.layout_footer}>
-      <KasaLogo width={122} height={39} />
+      <KasaLogo variant="footer" width={122} height={39} />
       <p>&#169; 2020 Kasa. All rights reserved</p>
     </footer>
-  </section>;
+  </>;
 }

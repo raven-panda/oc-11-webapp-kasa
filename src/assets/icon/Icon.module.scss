@@ -1,0 +1,13 @@
+.icon_default {
+  color: var(--font-tertiary);
+}
+
+.icon_footer {
+  color: var(--font-secondary);
+}
+
+@media screen and (max-width: 375px) {
+  .icon_default {
+    width: 146px;
+  }
+}
