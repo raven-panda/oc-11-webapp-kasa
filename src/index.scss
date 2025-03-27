@@ -59,10 +59,14 @@ img, svg {
   height: auto;
 }
 
-a {
-  color: var(--font-main)
+img {
+  object-fit: cover;
 }
 
-h1, p {
+a {
+  color: var(--font-main);
+}
+
+h1, h2, p {
   margin: 0;
 }
