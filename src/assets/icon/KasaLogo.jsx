@@ -5,7 +5,6 @@ import styles from "./Icon.module.scss";
  * @param width {number} SVG width
  * @param height {number} SVG height
  * @returns {JSX.Element}
- * @constructor
  */
 export default function KasaLogo({
   variant = "default",
