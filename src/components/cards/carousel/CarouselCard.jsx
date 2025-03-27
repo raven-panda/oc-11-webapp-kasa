@@ -6,6 +6,7 @@ import ChevronCarousel from "../../../assets/icon/ChevronCarousel.jsx";
 export default function CarouselCard({ pictures, alt }) {
   const carouselRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isAutoPlaying, setAutoPlay] = useState(true);
 
   const scrollCarousel = useCallback(() => {
     carouselRef?.current?.scrollTo({
@@ -24,9 +25,16 @@ export default function CarouselCard({ pictures, alt }) {
   }, [pictures.length]);
 
   useEffect(() => {
-    const timer = setTimeout(selectNextPicture, 8000);
+    const timer = setTimeout(() => isAutoPlaying && selectNextPicture(), 5000);
     return () => clearTimeout(timer);
-  }, [selectNextPicture, selectedIndex]);
+  }, [isAutoPlaying, selectNextPicture, selectedIndex]);
+
+  useEffect(() => {
+    if (isAutoPlaying) return;
+
+    const timer = setTimeout(() => setAutoPlay(true), 5000);
+    return () => clearTimeout(timer);
+  }, [isAutoPlaying]);
 
   useEffect(() => {
     scrollCarousel();
@@ -41,10 +49,16 @@ export default function CarouselCard({ pictures, alt }) {
           )}
         </div>
         {pictures.length > 1 && <>
-          <button className={styles.nav_previous_picture} onClick={selectPreviousPicture}>
+          <button className={styles.nav_previous_picture} onClick={() => {
+            selectPreviousPicture();
+            setAutoPlay(false);
+          }}>
             <ChevronCarousel />
           </button>
-          <button className={styles.nav_next_picture} onClick={selectNextPicture}>
+          <button className={styles.nav_next_picture} onClick={() => {
+            selectNextPicture();
+            setAutoPlay(false);
+          }}>
             <ChevronCarousel rotate={180} />
           </button>
           <p className={styles.nav_index}>{selectedIndex + 1} / {pictures.length}</p>
