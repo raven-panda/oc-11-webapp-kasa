@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorPage from "./pages/error/ErrorPage.jsx";
 import MainLayout from "./components/layout/MainLayout.jsx";
+import HomePage from "./pages/HomePage.jsx";
 
 /**
  * Custom router of the app
@@ -33,4 +34,6 @@ export default function KasaRouter() {
  * To create one, add a `<Route>` child with a path and a page component
  * @type {JSX.Element}
  */
-const RoutesNode = <></>;
+const RoutesNode = <>
+  <Route path={"/"} element={<HomePage />} />
+</>;
