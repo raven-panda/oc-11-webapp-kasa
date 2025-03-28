@@ -6,3 +6,10 @@
   gap: 30px;
   padding: 0 108px;
 }
+
+@media screen and (max-width: 768px) {
+  #collapsibles-container {
+    gap: 20px;
+    padding: 0;
+  }
+}
