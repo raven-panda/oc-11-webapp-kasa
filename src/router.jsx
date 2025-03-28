@@ -15,10 +15,7 @@ export default function KasaRouter() {
       <MainLayout>
         <Routes>
           {RoutesNode}
-          <Route
-            path="*"
-            element={<ErrorPage status={404} />}
-          />
+          <Route path="*" element={<ErrorPage status={404} />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

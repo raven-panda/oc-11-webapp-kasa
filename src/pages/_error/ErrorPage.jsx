@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
  * @param status {number} Status of error, default is 500
  * @returns {JSX.Element}
  */
-export default function ErrorPage({
-  status = 500
-}) {
+export default function ErrorPage({ status = 500 }) {
   const getMessage = () => {
     switch (status) {
       case 404:

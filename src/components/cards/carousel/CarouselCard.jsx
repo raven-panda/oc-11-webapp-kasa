@@ -1,4 +1,4 @@
-import styles from './CarouselCard.module.scss';
+import styles from "./CarouselCard.module.scss";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ChevronCarousel from "../../../assets/icon/ChevronCarousel.jsx";
 
@@ -25,13 +25,12 @@ export default function CarouselCard({ pictures, alt }) {
 
   // Callbacks for slide updates
   const selectPreviousPicture = useCallback(() => {
-    setSelectedIndex(prev => (prev > 0 ? prev - 1 : pictures.length - 1));
+    setSelectedIndex((prev) => (prev > 0 ? prev - 1 : pictures.length - 1));
   }, [pictures.length]);
 
   const selectNextPicture = useCallback(() => {
-    setSelectedIndex(prev => (prev < pictures.length - 1 ? prev + 1 : 0));
+    setSelectedIndex((prev) => (prev < pictures.length - 1 ? prev + 1 : 0));
   }, [pictures.length]);
-
 
   // Autoplay timeout to select next picture very 5 seconds
   useEffect(() => {
@@ -56,25 +55,41 @@ export default function CarouselCard({ pictures, alt }) {
     <>
       <section className={styles.carousel_section}>
         <div ref={carouselRef} className={styles.carousel}>
-          {pictures.map(
-            (picturePath, i) => <img key={picturePath} src={picturePath} width={1240} height={415} alt={`Image de ${alt} ${i}`} />
-          )}
+          {pictures.map((picturePath, i) => (
+            <img
+              key={picturePath}
+              src={picturePath}
+              width={1240}
+              height={415}
+              alt={`Image de ${alt} ${i}`}
+            />
+          ))}
         </div>
-        {pictures.length > 1 && <>
-          <button className={styles.nav_previous_picture} onClick={() => {
-            selectPreviousPicture();
-            setAutoPlay(false);
-          }}>
-            <ChevronCarousel />
-          </button>
-          <button className={styles.nav_next_picture} onClick={() => {
-            selectNextPicture();
-            setAutoPlay(false);
-          }}>
-            <ChevronCarousel rotate={180} />
-          </button>
-          <p className={styles.nav_index}>{selectedIndex + 1} / {pictures.length}</p>
-        </>}
+        {pictures.length > 1 && (
+          <>
+            <button
+              className={styles.nav_previous_picture}
+              onClick={() => {
+                selectPreviousPicture();
+                setAutoPlay(false);
+              }}
+            >
+              <ChevronCarousel />
+            </button>
+            <button
+              className={styles.nav_next_picture}
+              onClick={() => {
+                selectNextPicture();
+                setAutoPlay(false);
+              }}
+            >
+              <ChevronCarousel rotate={180} />
+            </button>
+            <p className={styles.nav_index}>
+              {selectedIndex + 1} / {pictures.length}
+            </p>
+          </>
+        )}
       </section>
     </>
   );

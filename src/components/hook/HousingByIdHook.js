@@ -13,7 +13,7 @@ export default function useHousingByIdData() {
    * @param id {string} ID of the housing to get
    */
   const searchById = (id) => {
-    const foundHousing = housingsFixture.find(housing => housing.id === id);
+    const foundHousing = housingsFixture.find((housing) => housing.id === id);
     setHousing(foundHousing);
     setError(!foundHousing ? 404 : undefined);
   };

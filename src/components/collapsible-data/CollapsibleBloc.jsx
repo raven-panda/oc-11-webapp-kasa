@@ -11,13 +11,15 @@ export default function CollapsibleBloc({ title, children }) {
 
   return (
     <div className={styles.collapsible + " " + (isExpanded ? styles.open : "")}>
-      <button type="button" aria-expanded={isExpanded} onClick={() => setExpanded(prev => !prev)}>
+      <button
+        type="button"
+        aria-expanded={isExpanded}
+        onClick={() => setExpanded((prev) => !prev)}
+      >
         <span>{title}</span>
         <ChevronLogo rotate={isExpanded ? 180 : 0} />
       </button>
-      <section>
-        {children}
-      </section>
+      <section>{children}</section>
     </div>
   );
 }
