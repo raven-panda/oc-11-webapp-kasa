@@ -1,21 +1,29 @@
 import styles from './CarouselCard.module.scss';
 import { useCallback, useEffect, useRef, useState } from "react";
-import ChevronLogo from "../../../assets/icon/ChevronLogo.jsx";
 import ChevronCarousel from "../../../assets/icon/ChevronCarousel.jsx";
 
+/**
+ * @param pictures {string[]} The Pictures path to show in the carousel
+ * @param alt {string} Alt text used for each picture if not found
+ * @returns {JSX.Element}
+ */
 export default function CarouselCard({ pictures, alt }) {
   const carouselRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  // When set to false, autoplay is disabled for 5 seconds
   const [isAutoPlaying, setAutoPlay] = useState(true);
 
+  // Slides the carousel to the desired picture. Called every time selectedIndex changes.
+  // Scroll used clientWidth of carouselRef to satisfy responsive
   const scrollCarousel = useCallback(() => {
     carouselRef?.current?.scrollTo({
-      left: 1240 * selectedIndex,
+      left: carouselRef.current.clientWidth * selectedIndex,
       top: 0,
       behavior: "smooth",
     });
   }, [selectedIndex]);
 
+  // Callbacks for slide updates
   const selectPreviousPicture = useCallback(() => {
     setSelectedIndex(prev => (prev > 0 ? prev - 1 : pictures.length - 1));
   }, [pictures.length]);
@@ -24,11 +32,14 @@ export default function CarouselCard({ pictures, alt }) {
     setSelectedIndex(prev => (prev < pictures.length - 1 ? prev + 1 : 0));
   }, [pictures.length]);
 
+
+  // Autoplay timeout to select next picture very 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => isAutoPlaying && selectNextPicture(), 5000);
     return () => clearTimeout(timer);
   }, [isAutoPlaying, selectNextPicture, selectedIndex]);
 
+  // Timeout for autoplay reactivation
   useEffect(() => {
     if (isAutoPlaying) return;
 
@@ -36,6 +47,7 @@ export default function CarouselCard({ pictures, alt }) {
     return () => clearTimeout(timer);
   }, [isAutoPlaying]);
 
+  // Calling once the callback, and then it will be re-called every time one of its dependencies changed
   useEffect(() => {
     scrollCarousel();
   }, [scrollCarousel]);
