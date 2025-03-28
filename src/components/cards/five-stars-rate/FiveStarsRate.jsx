@@ -1,4 +1,4 @@
-import styles from './FiveStarsRate.module.scss';
+import styles from "./FiveStarsRate.module.scss";
 import StarIcon from "../../../assets/icon/StarIcon.jsx";
 
 /**
@@ -10,7 +10,9 @@ export default function FiveStarsRate({ rate = 0 }) {
   const normalizedRate = Math.min(Math.max(Math.floor(rate), 0), 5);
 
   return (
-    <div className={`${styles.five_stars_container} ${styles[`rating_${normalizedRate}`]}`}>
+    <div
+      className={`${styles.five_stars_container} ${styles[`rating_${normalizedRate}`]}`}
+    >
       {[...Array(5)].map((_, index) => (
         <StarIcon key={index} className={styles.star_icon} />
       ))}
