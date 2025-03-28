@@ -3,6 +3,7 @@
   padding: 78px 16px;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 25px;
   overflow: hidden;
   margin-bottom: 43px;
@@ -52,8 +53,11 @@
 
 
 @media screen and (max-width: 768px) {
-  .page_title_card {
+  .home, .about {
     margin-bottom: 20px;
+  }
+
+  .about {
     min-height: 111px;
   }
 }

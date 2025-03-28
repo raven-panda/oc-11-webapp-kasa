@@ -41,3 +41,26 @@ p.nav_index {
   width: 100%;
   text-align: center;
 }
+
+@media screen and (max-width: 425px) {
+  .carousel {
+    height: 215px;
+    border-radius: 10px;
+  }
+
+  button.nav_previous_picture, button.nav_next_picture {
+    width: 28px;
+  }
+
+  button.nav_previous_picture {
+    left: 5px;
+  }
+
+  button.nav_next_picture {
+    right: 5px;
+  }
+
+  p.nav_index {
+    display: none;
+  }
+}

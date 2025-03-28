@@ -19,3 +19,9 @@
     }
   }
 }
+
+@media screen and (max-width: 425px) {
+  .five_stars_container > .star_icon {
+    max-width: 18px;
+  }
+}
