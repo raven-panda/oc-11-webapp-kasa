@@ -1,0 +1,21 @@
+@use '/src/assets/style/variables';
+
+.five_stars_container {
+  display: flex;
+  gap: 12px;
+
+  > .star_icon {
+    color: var(--font-quaternary);
+  }
+
+  // Using a 'for' loop to template each stars completion class
+  @for $i from 1 through 5 {
+    &.rating_#{$i} {
+      @for $j from 1 through $i {
+        > .star_icon:nth-child(#{$j}) {
+          color: var(--font-tertiary);
+        }
+      }
+    }
+  }
+}
