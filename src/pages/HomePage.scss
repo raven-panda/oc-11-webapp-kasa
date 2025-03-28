@@ -2,10 +2,26 @@
 
 #housing-list {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, minmax(min-content, 340px));
   justify-content: space-between;
-  gap: 50px 60px;
+  gap: 2vw 2%;
   background-color: var(--bg-quaternary);
   padding: 56px 50px;
   border-radius: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  #housing-list {
+    grid-template-columns: repeat(2, minmax(min-content, 340px));
+    padding: 36px 30px;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #housing-list {
+    background-color: transparent;
+    padding: 0;
+    grid-template-columns: repeat(1, 100%);
+  }
 }

@@ -1,6 +1,6 @@
 .page_title_card {
   position: relative;
-  padding: 78px 0;
+  padding: 78px 16px;
   display: flex;
   justify-content: center;
   border-radius: 25px;
@@ -35,4 +35,17 @@
   box-sizing: border-box;
   min-height: 223px;
   background: url('/public/pictures/image-source-2-bg.png') center;
+}
+
+@media screen and (max-width: 1024px) {
+  .page_title_card > h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page_title_card {
+    padding: 31px 16px;
+    border-radius: 10px;
+  }
 }

@@ -4,7 +4,6 @@
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  max-width: 340px;
 
   > img {
     display: block;
@@ -33,5 +32,11 @@
       font-size: 1.125rem;
       color: var(--font-secondary);
     }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    aspect-ratio: 67/51;
   }
 }
