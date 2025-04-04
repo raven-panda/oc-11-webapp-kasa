@@ -1,7 +1,7 @@
 import useHousingData from "../components/hook/HousingHook.js";
 import HousingCard from "../components/cards/housing-card/HousingCard.jsx";
 import "./HomePage.scss";
-import PageBanner from "../components/cards/page-title-card/PageBanner.jsx";
+import PageBanner from "../components/cards/page-banner/PageBanner.jsx";
 import LoadingIndicator from "../components/loading-indicator/LoadingIndicator.jsx";
 
 export default function HomePage() {
