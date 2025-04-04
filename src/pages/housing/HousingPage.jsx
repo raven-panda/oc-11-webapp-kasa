@@ -3,9 +3,9 @@ import useHousingByIdData from "../../components/hook/HousingByIdHook.js";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ErrorPage from "../_error/ErrorPage.jsx";
-import CarouselCard from "../../components/cards/carousel/CarouselCard.jsx";
+import Slideshow from "../../components/cards/carousel/Slideshow.jsx";
 import FiveStarsRate from "../../components/cards/five-stars-rate/FiveStarsRate.jsx";
-import CollapsibleBloc from "../../components/collapsible-data/CollapsibleBloc.jsx";
+import CollapsibleBlock from "../../components/collapsible-data/CollapsibleBlock.jsx";
 
 export default function HousingPage() {
   const { id } = useParams();
@@ -20,7 +20,7 @@ export default function HousingPage() {
   ) : (
     housing && (
       <>
-        <CarouselCard pictures={housing.pictures} alt={housing.title} />
+        <Slideshow pictures={housing.pictures} alt={housing.title} />
         <header id="housing-header">
           <section>
             <h2 id="housing-title">{housing.title}</h2>
@@ -45,14 +45,14 @@ export default function HousingPage() {
           </section>
         </header>
         <div id="housing-infos-collapsible">
-          <CollapsibleBloc title="Description">
+          <CollapsibleBlock title="Description">
             {housing.description}
-          </CollapsibleBloc>
-          <CollapsibleBloc title="Équipements">
+          </CollapsibleBlock>
+          <CollapsibleBlock title="Équipements">
             {housing.equipments.map((equipment) => (
               <p key={equipment}>{equipment}</p>
             ))}
-          </CollapsibleBloc>
+          </CollapsibleBlock>
         </div>
       </>
     )

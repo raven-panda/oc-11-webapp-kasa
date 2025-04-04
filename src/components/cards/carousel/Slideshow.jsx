@@ -1,4 +1,4 @@
-import styles from "./CarouselCard.module.scss";
+import styles from "./Slideshow.module.scss";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ChevronCarousel from "../../../assets/icon/ChevronCarousel.jsx";
 
@@ -7,7 +7,7 @@ import ChevronCarousel from "../../../assets/icon/ChevronCarousel.jsx";
  * @param alt {string} Alt text used for each picture if not found
  * @returns {JSX.Element}
  */
-export default function CarouselCard({ pictures, alt }) {
+export default function Slideshow({ pictures, alt }) {
   const carouselRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   // When set to false, autoplay is disabled for 5 seconds
