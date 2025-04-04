@@ -1,5 +1,5 @@
-import PageBanner from "../../components/cards/page-title-card/PageBanner.jsx";
-import CollapsibleBlock from "../../components/collapsible-data/CollapsibleBlock.jsx";
+import PageBanner from "../../components/cards/page-banner/PageBanner.jsx";
+import CollapsibleBlock from "../../components/collapsible-block/CollapsibleBlock.jsx";
 import "./AboutPage.scss";
 
 export default function AboutPage() {
