@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import housingsFixture from "../../__fixtures__/logements.json";
+import { fetchHousings } from "../../action/HousingAction.js";
 
 /**
  * Hook used for housings data retrieval
@@ -7,10 +7,17 @@ import housingsFixture from "../../__fixtures__/logements.json";
  */
 export default function useHousingData() {
   const [housings, setHousings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setHousings(housingsFixture ?? []);
+    setLoading(true);
+
+    fetchHousings()
+      .then(setHousings)
+      .catch(setError)
+      .finally(() => setLoading(false));
   }, []);
 
-  return { housings };
+  return { housings, loading, error };
 }

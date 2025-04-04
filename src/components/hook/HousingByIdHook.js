@@ -1,5 +1,6 @@
 import { useState } from "react";
 import housingsFixture from "../../__fixtures__/logements.json";
+import { fetchHousingById } from "../../action/HousingAction.js";
 
 /**
  * Hook used for a housing object retrieval by ID
@@ -7,16 +8,19 @@ import housingsFixture from "../../__fixtures__/logements.json";
  */
 export default function useHousingByIdData() {
   const [housing, setHousing] = useState();
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
 
   /**
    * @param id {string} ID of the housing to get
    */
   const searchById = (id) => {
-    const foundHousing = housingsFixture.find((housing) => housing.id === id);
-    setHousing(foundHousing);
-    setError(!foundHousing ? 404 : undefined);
+    setLoading(true);
+    fetchHousingById(id)
+      .then(setHousing)
+      .catch(setError)
+      .finally(() => setLoading(false));
   };
 
-  return { housing, searchById, error };
+  return { housing, searchById, loading, error };
 }
