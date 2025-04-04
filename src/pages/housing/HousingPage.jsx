@@ -26,9 +26,9 @@ export default function HousingPage() {
             <h2 id="housing-title">{housing.title}</h2>
             <p id="housing-location">{housing.location}</p>
             <div id="housing-tags">
-              {housing.tags.map(
-                tag => <p key={tag}>{tag}</p>
-              )}
+              {housing.tags.map((tag) => (
+                <p key={tag}>{tag}</p>
+              ))}
             </div>
           </section>
           <section>
@@ -45,11 +45,13 @@ export default function HousingPage() {
           </section>
         </header>
         <div id="housing-infos-collapsible">
-          <CollapsibleBloc title="Description">{housing.description}</CollapsibleBloc>
+          <CollapsibleBloc title="Description">
+            {housing.description}
+          </CollapsibleBloc>
           <CollapsibleBloc title="Équipements">
-            {housing.equipments.map(
-              equipment => <p key={equipment}>{equipment}</p>
-            )}
+            {housing.equipments.map((equipment) => (
+              <p key={equipment}>{equipment}</p>
+            ))}
           </CollapsibleBloc>
         </div>
       </>
