@@ -8,6 +8,11 @@
   background-color: var(--bg-quaternary);
   padding: 56px 50px;
   border-radius: 25px;
+
+  &.loading {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
