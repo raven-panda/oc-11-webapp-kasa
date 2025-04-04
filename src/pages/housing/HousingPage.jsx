@@ -27,7 +27,7 @@ export default function HousingPage() {
             <p id="housing-location">{housing.location}</p>
             <div id="housing-tags">
               {housing.tags.map(
-                tag => <p>{tag}</p>
+                tag => <p key={tag}>{tag}</p>
               )}
             </div>
           </section>
@@ -48,7 +48,7 @@ export default function HousingPage() {
           <CollapsibleBloc title="Description">{housing.description}</CollapsibleBloc>
           <CollapsibleBloc title="Équipements">
             {housing.equipments.map(
-              equipment => <p>{equipment}</p>
+              equipment => <p key={equipment}>{equipment}</p>
             )}
           </CollapsibleBloc>
         </div>
