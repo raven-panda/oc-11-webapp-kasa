@@ -1,5 +1,4 @@
-import { useState } from "react";
-import housingsFixture from "../../__fixtures__/logements.json";
+import { useCallback, useState } from "react";
 import { fetchHousingById } from "../../action/HousingAction.js";
 
 /**
@@ -14,13 +13,13 @@ export default function useHousingByIdData() {
   /**
    * @param id {string} ID of the housing to get
    */
-  const searchById = (id) => {
+  const searchById = useCallback((id) => {
     setLoading(true);
     fetchHousingById(id)
       .then(setHousing)
       .catch(setError)
       .finally(() => setLoading(false));
-  };
+  }, []);
 
   return { housing, searchById, loading, error };
 }

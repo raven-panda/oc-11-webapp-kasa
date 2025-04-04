@@ -6,18 +6,17 @@ import ErrorPage from "../_error/ErrorPage.jsx";
 import CarouselCard from "../../components/cards/carousel/CarouselCard.jsx";
 import FiveStarsRate from "../../components/cards/five-stars-rate/FiveStarsRate.jsx";
 import CollapsibleBloc from "../../components/collapsible-data/CollapsibleBloc.jsx";
+import LoadingIndicator from "../../components/loading-indicator/LoadingIndicator.jsx";
 
 export default function HousingPage() {
   const { id } = useParams();
-  const { housing, searchById, error } = useHousingByIdData();
+  const { housing, searchById, loading, error } = useHousingByIdData();
 
   useEffect(() => {
     searchById(id);
   }, [searchById, id]);
 
-  return error ? (
-    <ErrorPage status={error} />
-  ) : (
+  return loading ? <LoadingIndicator /> : error ? <ErrorPage status={error} /> : (
     housing && (
       <>
         <CarouselCard pictures={housing.pictures} alt={housing.title} />
