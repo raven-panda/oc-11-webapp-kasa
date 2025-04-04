@@ -1,11 +1,11 @@
-import styles from "./PageTitleCard.module.scss";
+import styles from "./PageBanner.module.scss";
 
 /**
  * @param title {string} The text to render inside the card
  * @param variant {"home"|"about"|"housing"} The variant category
  * @returns {JSX.Element}
  */
-export default function PageTitleCard({ title, variant = "home" }) {
+export default function PageBanner({ title, variant = "home" }) {
   return (
     <section
       className={

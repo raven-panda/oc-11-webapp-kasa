@@ -6,7 +6,7 @@ import ChevronLogo from "../../assets/icon/ChevronLogo.jsx";
  * @param title {ReactNode} Title of the collapsible
  * @param children {ReactNode} Children to show in the collapsible bloc
  */
-export default function CollapsibleBloc({ title, children }) {
+export default function CollapsibleBlock({ title, children }) {
   const [isExpanded, setExpanded] = useState(false);
 
   return (
