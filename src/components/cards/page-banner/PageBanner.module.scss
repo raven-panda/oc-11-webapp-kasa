@@ -1,3 +1,5 @@
+@use '/src/assets/style/variables' as *;
+
 .page_title_card {
   position: relative;
   padding: 78px 16px;
@@ -38,21 +40,18 @@
   background: url('/pictures/image-source-2-bg.png') center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $breakpoint_media_medium) {
   .page_title_card > h1 {
     font-size: 1.5rem;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint_media_small) {
   .page_title_card {
     padding: 31px 16px;
     border-radius: 10px;
   }
-}
 
-
-@media screen and (max-width: 768px) {
   .home, .about {
     margin-bottom: 20px;
   }
@@ -61,3 +60,4 @@
     min-height: 111px;
   }
 }
+

@@ -1,4 +1,4 @@
-@use '/src/assets/style/variables';
+@use '/src/assets/style/variables' as *;
 
 .five_stars_container {
   display: flex;
@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: $breakpoint_media_xs) {
   .five_stars_container > .star_icon {
     max-width: 18px;
   }

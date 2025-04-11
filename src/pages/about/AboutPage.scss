@@ -1,4 +1,4 @@
-@use '/src/assets/style/variables';
+@use '/src/assets/style/variables' as *;
 
 #collapsibles-container {
   display: flex;
@@ -7,7 +7,7 @@
   padding: 0 108px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint_media_small) {
   #collapsibles-container {
     gap: 20px;
     padding: 0;

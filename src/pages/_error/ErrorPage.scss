@@ -1,4 +1,4 @@
-@use "/src/assets/style/variables";
+@use "/src/assets/style/variables" as *;
 
 #error-section {
   padding: 139px;
@@ -27,7 +27,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and ($breakpoint_media_small) {
 
   #error-section {
     padding: 113px 57px;

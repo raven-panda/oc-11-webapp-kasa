@@ -1,3 +1,5 @@
+@use '/src/assets/style/variables' as *;
+
 .icon_default {
   color: var(--font-tertiary);
 }
@@ -10,7 +12,7 @@
   transition: rotate ease-in-out 0.3s;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint_media_small) {
   .icon_default {
     width: 146px;
   }

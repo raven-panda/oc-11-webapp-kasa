@@ -1,4 +1,4 @@
-@use '/src/assets/style/variables';
+@use '/src/assets/style/variables' as *;
 
 .card {
   position: relative;
@@ -35,7 +35,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: $breakpoint_media_xs) {
   .card {
     aspect-ratio: 67/51;
   }

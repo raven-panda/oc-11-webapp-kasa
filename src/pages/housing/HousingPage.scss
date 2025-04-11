@@ -1,4 +1,4 @@
-@use '/src/assets/style/variables';
+@use '/src/assets/style/variables' as *;
 
 #housing-header {
   margin-top: 30px;
@@ -61,7 +61,7 @@
   gap: 74px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint_media_small) {
   #housing-header {
     grid: 1fr 1fr / auto;
     #housing-title {
@@ -90,7 +90,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: $breakpoint_media_xs) {
   #housing-header {
     #housing-title {
       font-size: 1.125rem;

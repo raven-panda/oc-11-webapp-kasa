@@ -1,4 +1,4 @@
-@use '/src/assets/style/variables';
+@use '/src/assets/style/variables' as *;
 
 .collapsible {
   position: relative;
@@ -43,9 +43,15 @@
   }
 
   &.open {
-    max-height: 200px;
+    max-height: 300px;
     > section {
       transform: translateY(0);
     }
+  }
+}
+
+@media screen and (max-width: $breakpoint_media_xs) {
+  .collapsible.open {
+    max-height: 500px;
   }
 }

@@ -1,4 +1,4 @@
-@use '/src/assets/style/variables';
+@use '/src/assets/style/variables' as *;
 
 #housing-list {
   display: grid;
@@ -10,7 +10,7 @@
   border-radius: 25px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint_media_small) {
   #housing-list {
     grid-template-columns: repeat(2, minmax(min-content, 340px));
     padding: 36px 30px;
@@ -18,7 +18,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: $breakpoint_media_xs) {
   #housing-list {
     background-color: transparent;
     padding: 0;

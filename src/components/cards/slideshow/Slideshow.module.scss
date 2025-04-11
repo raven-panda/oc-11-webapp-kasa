@@ -1,4 +1,4 @@
-@use '/src/assets/style/variables';
+@use '/src/assets/style/variables' as *;
 
 .carousel_section {
   position: relative;
@@ -42,7 +42,7 @@ p.nav_index {
   text-align: center;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: $breakpoint_media_xs) {
   .carousel {
     height: 215px;
     border-radius: 10px;
