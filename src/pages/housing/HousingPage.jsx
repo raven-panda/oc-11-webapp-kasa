@@ -3,8 +3,8 @@ import useHousingByIdData from "../../components/hook/HousingByIdHook.js";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ErrorPage from "../_error/ErrorPage.jsx";
-import Slideshow from "../../components/cards/slideshow/Slideshow.jsx";
-import FiveStarsRate from "../../components/cards/five-stars-rate/FiveStarsRate.jsx";
+import Slideshow from "../../components/slideshow/Slideshow.jsx";
+import FiveStarsRate from "../../components/five-stars-rate/FiveStarsRate.jsx";
 import CollapsibleBlock from "../../components/collapsible-block/CollapsibleBlock.jsx";
 
 export default function HousingPage() {

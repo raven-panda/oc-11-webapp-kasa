@@ -1,5 +1,5 @@
 import styles from "./FiveStarsRate.module.scss";
-import StarIcon from "../../../assets/icon/StarIcon.jsx";
+import StarIcon from "../../assets/icon/StarIcon.jsx";
 
 /**
  * @param rate {number} Max: 5

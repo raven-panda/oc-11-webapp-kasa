@@ -1,6 +1,6 @@
 import styles from "./Slideshow.module.scss";
 import { useCallback, useEffect, useRef, useState } from "react";
-import ChevronCarousel from "../../../assets/icon/ChevronCarousel.jsx";
+import ChevronCarousel from "../../assets/icon/ChevronCarousel.jsx";
 
 /**
  * @param pictures {string[]} The Pictures path to show in the carousel
@@ -36,7 +36,7 @@ export default function Slideshow({ pictures, alt }) {
   useEffect(() => {
     const timer = setTimeout(() => isAutoPlaying && selectNextPicture(), 5000);
     return () => clearTimeout(timer);
-  }, [isAutoPlaying, selectNextPicture, selectedIndex]);
+  }, [isAutoPlaying, selectNextPicture]);
 
   // Timeout for autoplay reactivation
   useEffect(() => {

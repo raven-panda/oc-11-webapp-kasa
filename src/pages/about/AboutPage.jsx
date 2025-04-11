@@ -1,4 +1,4 @@
-import PageBanner from "../../components/cards/page-banner/PageBanner.jsx";
+import PageBanner from "../../components/page-banner/PageBanner.jsx";
 import CollapsibleBlock from "../../components/collapsible-block/CollapsibleBlock.jsx";
 import "./AboutPage.scss";
 
